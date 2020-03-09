@@ -17,10 +17,10 @@ export default function CarouselPopular(props) {
     });
   }, [])
 
-  const images = props.popular && props.popular.results.map((elem, i) => {
+  const images = props.topRated && props.topRated.results.map((elem, i) => {
     return (
       <div className="swiper-slide" key={i}>
-        <img src={`https://image.tmdb.org/t/p/w500${elem.poster_path}`} key={i} width="30" height="10" alt="popular"/>
+        <img src={`https://image.tmdb.org/t/p/w500${elem.poster_path}`} key={i} width="30" height="10" alt="top rated"/>
       </div>
     )
   })
@@ -28,7 +28,7 @@ export default function CarouselPopular(props) {
   return (
     <>
       <div className="netflix">
-        <h2 className="popular-heading2">Popular</h2>
+        <h2 className="popular-heading2">Top Rated</h2>
         <div className="swiper-container">
           <div className="swiper-wrapper">
             {images}

@@ -5,6 +5,7 @@ export const DataFetchContext = createContext()
 const DataFetchContextProvider = (props) => {
   const [nowPlaying, setNowPlaying] = useState("")
   const [popular, SetPopular] = useState("")
+  const [topRated, SetTopRated] = useState("")
 
   const fetchingData = async () => {
     try {
@@ -34,6 +35,20 @@ const DataFetchContextProvider = (props) => {
     } catch(err) {
       console.log(err)
     }
+
+    try {
+      const n = await fetch("https://api.themoviedb.org/3/movie/top_rated?api_key=e0282b31393a2e65727c799e6e985ef1&language=en-US&page=1", {
+        method: "GET",
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        }
+      })
+      const nJson = await n.json()
+      SetTopRated({ ...nJson })
+    } catch(err) {
+      console.log(err)
+    }
   }
 
   useEffect(() => {
@@ -41,7 +56,7 @@ const DataFetchContextProvider = (props) => {
   }, [])
 
   return (
-    <DataFetchContext.Provider value={{ nowPlaying, popular }}>
+    <DataFetchContext.Provider value={{ nowPlaying, popular, topRated }}>
       {props.children}
     </DataFetchContext.Provider>
   )
