@@ -1,11 +1,11 @@
 .awssld__wrapper {
-  height: 50% !important;
-  width: 100% !important;
+  /* height: 50% !important;
+  width: 100% !important; */
 }
 
 
 .awssld__content {
-  height: 40rem;
+  height: 41.9rem;
 }
 
 
@@ -18,18 +18,19 @@
 }
 
 .image-container {
-  /* height: 10%; */
   width: 30%;
 }
 
 .big-text {
-  font-size: 20px;
-  width: 30%;
+  font-size: 23px;
+  width: 35%;
   margin-top: 10rem;
-  padding: 0;
+  padding-top: 1rem;
+  /* border: 1px solid orange; */
 }
 
 #root > div.awssld.awssld--organic-arrows {
-  height: 80rem;
+  height: 200%;
   margin: 0;
+  padding: 0;
 }

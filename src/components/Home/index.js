@@ -12,7 +12,7 @@ export default function Home() {
       <Navbar />
       <BigCarouselNowPlaying nowPlaying={nowPlaying}/>
       <CarouselPopular popular={popular} />
-      {/* <CarouselTopRated topRated={topRated}/> */}
+      <CarouselTopRated topRated={topRated}/>
     </>
   )
 }
