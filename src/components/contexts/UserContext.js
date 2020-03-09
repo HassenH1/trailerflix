@@ -5,7 +5,6 @@ export const UserContext = createContext()
 export default function UserContextProvider(props) {
   return (
     <div>
-      
     </div>
   )
 }
