@@ -2,17 +2,22 @@ import React, { useEffect } from 'react'
 import AwesomeSlider from 'react-awesome-slider';
 import withAutoplay from 'react-awesome-slider/dist/autoplay';
 import 'react-awesome-slider/dist/styles.css';
-
+import './bigcarousel.css'
 
 export default function BigCarouselNowPlaying(props) {
 
   const images = props.nowPlaying && props.nowPlaying.results.map((elem, i) => {
     return (
-      <div key={i} style={{display: "flex", flexDirection: "row"}}>
-        <img src={`https://image.tmdb.org/t/p/original${elem.poster_path}`} alt="now playing" style={{width: "30%"}}/>
-        <div className="text">
+      <div key={i} className="IS-THIS-IT">
+        
+        <div className="image-container">
+          <img src={`https://image.tmdb.org/t/p/original${elem.poster_path}`} alt="now playing" />
+        </div>
+
+        <div className="big-text">
           {elem.overview}
         </div>
+
       </div>
     )
   })
