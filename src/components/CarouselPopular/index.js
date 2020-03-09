@@ -20,7 +20,7 @@ export default function CarouselPopular(props) {
   const images = props.popular && props.popular.results.map((elem, i) => {
     return (
       <div className="swiper-slide" key={i}>
-        <img src={`https://image.tmdb.org/t/p/w500${elem.poster_path}`} key={i} width="30" height="10" alt="popular"/>
+        <img src={`https://image.tmdb.org/t/p/w500${elem.poster_path}`} width="30" height="10" alt="popular"/>
       </div>
     )
   })
