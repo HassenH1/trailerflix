@@ -11,12 +11,12 @@ export default function Signin() {
         <div className="showcasecontent">
           <h2 className="sign-up">Sign In</h2>
           <form>
-            <input placeholder="Email" type="text"/>
-            <input placeholder="Password" type="text"/>
+            <input placeholder="Email" type="text" />
+            <input placeholder="Password" type="text" />
             <input type="submit" />
           </form>
           <div className="new-new">
-            <p className="p-sm">New to TrailerFlix? <a href="/signup">Sign Up now</a></p>
+            <p className="p-sm">New to TrailerFlix? <a href="/signup">Sign up now!</a></p>
           </div>
         </div>
       </header>

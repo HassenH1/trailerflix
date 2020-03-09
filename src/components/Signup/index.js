@@ -2,6 +2,11 @@ import React from 'react'
 import './signup.css'
 
 export default function Signup() {
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+  }
+
   return (
     <div className="body">
       <header className="show-case">
@@ -13,10 +18,10 @@ export default function Signup() {
           <form>
             <input placeholder="Email" type="text"/>
             <input placeholder="Password" type="text"/>
-            <input type="submit" />
+            <input type="submit" onClick={handleSubmit}/>
           </form>
           <div className="new-new">
-            <p className="p-sm">Already have an Account? <a href="/signin">Sign in</a></p>
+            <p className="p-sm">Already have an Account? <a href="/signin">Sign in.</a></p>
           </div>
         </div>
       </header>

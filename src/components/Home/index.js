@@ -10,9 +10,9 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <BigCarouselNowPlaying nowPlaying={nowPlaying}/>
+      <BigCarouselNowPlaying nowPlaying={nowPlaying} />
       <CarouselPopular popular={popular} />
-      <CarouselTopRated topRated={topRated}/>
+      <CarouselTopRated topRated={topRated} />
     </>
   )
 }
