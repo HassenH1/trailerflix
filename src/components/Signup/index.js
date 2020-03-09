@@ -4,6 +4,7 @@ import './signup.css'
 export default function Signup() {
   const [input, setInput] = useState({
     email: "",
+    name: "",
     password: ""
   })
 
@@ -18,7 +19,7 @@ export default function Signup() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    if (input.email === "" || input.password === "") {
+    if (input.email === "" || input.password === "" || input.name === "") {
       setError("Seems like your missing certain values")
       setTimeout(() => {
         setError("")
@@ -38,6 +39,7 @@ export default function Signup() {
           <h2 className="sign-up">Sign Up</h2>
           <form>
             <input placeholder="Email" type="text" name="email" onChange={handleInput} value={input.email} />
+            <input placeholder="Name" type="text" name="name" onChange={handleInput} value={input.name} />
             <input placeholder="Password" type="text" name="password" onChange={handleInput} value={input.password} />
             <input type="submit" onClick={handleSubmit} />
           </form>
