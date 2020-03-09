@@ -60,3 +60,13 @@ export default function BigCarouselNowPlaying(props) {
     </>
   )
 }
+// this might help the image size 
+// .parent {
+//   width: 100px;
+// }
+
+// img {
+//   display: block;
+//   width: 100%;
+//   height: auto;
+// }

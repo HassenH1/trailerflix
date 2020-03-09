@@ -25,7 +25,7 @@ export default function Signup() {
       }, 5000)
       return
     }
-    console.log(input, "<-----------should show me this if error is good")
+
   }
 
   return (
@@ -41,10 +41,10 @@ export default function Signup() {
             <input placeholder="Password" type="text" name="password" onChange={handleInput} value={input.password} />
             <input type="submit" onClick={handleSubmit} />
           </form>
+          <div style={{ textAlign: "center", color: "red" }}>{error}</div>
           <div className="new-new">
             <p className="p-sm">Already have an Account? <a href="/signin">Sign in.</a></p>
           </div>
-          <div style={{ textAlign: "center", color: "red" }}>{error}</div>
         </div>
       </header>
     </div>
