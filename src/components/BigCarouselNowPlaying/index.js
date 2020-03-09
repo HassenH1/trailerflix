@@ -11,7 +11,7 @@ export default function BigCarouselNowPlaying(props) {
 
     newS = str.split(" ")
 
-    newS.splice(30, newS.length, "...")
+    newS.splice(60, newS.length, "...")
 
     return newS.join(" ")
   }
@@ -29,11 +29,10 @@ export default function BigCarouselNowPlaying(props) {
 
           <br />
           {
-            elem.overview.split(" ").length >= 29
-              ? <p>{console.log(shortingString(elem.overview), "<---------------testing one two one two")}</p>
+            elem.overview.split(" ").length >= 60
+              ? <p>{shortingString(elem.overview)}</p>
               : <p>{elem.overview}</p>
           }
-          {/* <p>{elem.overview}</p> */}
 
           <br />
 
