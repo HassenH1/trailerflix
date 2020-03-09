@@ -8,9 +8,10 @@ export default function BigCarouselNowPlaying(props) {
 
   const images = props.nowPlaying && props.nowPlaying.results.map((elem, i) => {
     return (
-      <div className="mySlides fade" key={i}>
-        <img src={`https://image.tmdb.org/t/p/original${elem.poster_path}`} alt="now playing" width="100%" height="20%" />
-        <div className="text">Somes text goes here too
+      <div className="mySlides" key={i}>
+        <img src={`https://image.tmdb.org/t/p/original${elem.poster_path}`} alt="now playing" className="big-img" />
+        <div className="text">
+          {elem.overview}
         </div>
       </div>
     )
@@ -18,13 +19,15 @@ export default function BigCarouselNowPlaying(props) {
 
   const AutoplaySlider = withAutoplay(AwesomeSlider);
 
-
   return (
     <>
       <AutoplaySlider
         play={true}
         cancelOnInteraction={false} // should stop playing on user interaction
         interval={3000}
+        infinite={true}
+        bullets={false}
+      // fillParent={true}
       >
         {images}
       </AutoplaySlider>

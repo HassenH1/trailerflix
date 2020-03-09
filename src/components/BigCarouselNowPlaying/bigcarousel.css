@@ -1,0 +1,19 @@
+.awssld__wrapper {
+  height: 50% !important;
+  width: 50% !important;
+  margin: 0 auto;
+}
+
+.awssld__container {
+  height: 50% !important;
+  width: 50% !important;
+  margin: 0 auto;
+}
+
+.mySlides {
+  display: flex;
+  flex-direction: row;
+}
+.text {
+  border: 1px solid purple;
+}
