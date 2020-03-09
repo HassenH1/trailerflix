@@ -1,4 +1,4 @@
-.awssld__wrapper {
+/* .awssld__wrapper {
   height: 50% !important;
   width: 50% !important;
   margin: 0 auto;
@@ -9,11 +9,22 @@
   width: 50% !important;
   margin: 0 auto;
 }
-
+*/
+/* 
 .mySlides {
-  display: flex;
-  flex-direction: row;
-}
-.text {
-  border: 1px solid purple;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  height: 100%;
+  transform: translate(-50%, -50%);
+} */
+
+
+.big-img {
+  height: auto;
+  /* width: fit-content; */
+  /* width: 10%; */
+  background-color: purple;
+  border: 10px solid orange;
 }

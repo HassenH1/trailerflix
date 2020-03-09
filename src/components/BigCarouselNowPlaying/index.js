@@ -8,8 +8,8 @@ export default function BigCarouselNowPlaying(props) {
 
   const images = props.nowPlaying && props.nowPlaying.results.map((elem, i) => {
     return (
-      <div className="mySlides" key={i}>
-        <img src={`https://image.tmdb.org/t/p/original${elem.poster_path}`} alt="now playing" className="big-img" />
+      <div key={i} style={{display: "flex", flexDirection: "row"}}>
+        <img src={`https://image.tmdb.org/t/p/original${elem.poster_path}`} alt="now playing" style={{width: "30%"}}/>
         <div className="text">
           {elem.overview}
         </div>
