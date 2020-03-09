@@ -6,6 +6,16 @@ import './bigcarousel.css'
 
 export default function BigCarouselNowPlaying(props) {
 
+  const shortingString = (str) => {
+    let newS = ""
+
+    newS = str.split(" ")
+
+    newS.splice(30, newS.length, "...")
+
+    return newS.join(" ")
+  }
+
   const images = props.nowPlaying && props.nowPlaying.results.map((elem, i) => {
     return (
       <div key={i} className="IS-THIS-IT">
@@ -18,11 +28,15 @@ export default function BigCarouselNowPlaying(props) {
           <h2>{elem.original_title}</h2>
 
           <br />
-          
-          <p>{elem.overview}</p>
-          
+          {
+            elem.overview.split(" ").length >= 29
+              ? <p>{console.log(shortingString(elem.overview), "<---------------testing one two one two")}</p>
+              : <p>{elem.overview}</p>
+          }
+          {/* <p>{elem.overview}</p> */}
+
           <br />
-          
+
           <button className="btn"><a href="#">Watch Trailer</a></button>
         </div>
 
@@ -37,14 +51,13 @@ export default function BigCarouselNowPlaying(props) {
       <AutoplaySlider
         play={true}
         cancelOnInteraction={false} // should stop playing on user interaction
-        interval={5000}
+        interval={8000}
         infinite={true}
         bullets={false}
       // fillParent={true}
       >
         {images}
       </AutoplaySlider>
-      {console.log(props)}
     </>
   )
 }
