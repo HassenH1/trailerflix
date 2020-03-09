@@ -1,10 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './signup.css'
 
 export default function Signup() {
+  const [input, setInput] = useState({
+    email: "",
+    password: ""
+  })
+
+  const [error, setError] = useState("")
+
+  const handleInput = (e) => {
+    setInput({
+      ...input,
+      [e.target.name]: e.target.value
+    })
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    if (input.email === "" || input.password === "") {
+      setError("Seems like your missing certain values")
+      setTimeout(() => {
+        setError("")
+      }, 5000)
+      return
+    }
+    console.log(input, "<-----------should show me this if error is good")
   }
 
   return (
@@ -16,13 +37,14 @@ export default function Signup() {
         <div className="showcasecontent">
           <h2 className="sign-up">Sign Up</h2>
           <form>
-            <input placeholder="Email" type="text"/>
-            <input placeholder="Password" type="text"/>
-            <input type="submit" onClick={handleSubmit}/>
+            <input placeholder="Email" type="text" name="email" onChange={handleInput} value={input.email} />
+            <input placeholder="Password" type="text" name="password" onChange={handleInput} value={input.password} />
+            <input type="submit" onClick={handleSubmit} />
           </form>
           <div className="new-new">
             <p className="p-sm">Already have an Account? <a href="/signin">Sign in.</a></p>
           </div>
+          <div style={{ textAlign: "center", color: "red" }}>{error}</div>
         </div>
       </header>
     </div>
