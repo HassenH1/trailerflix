@@ -2,8 +2,8 @@ import React, { useState, useContext } from 'react'
 import './signup.css'
 import { UserContext } from '../contexts/UserContext'
 
-export default function Signup() {
-  const { addUser } = useContext(UserContext) 
+export default function Signup(props) {
+  const { addUser } = useContext(UserContext)
 
   const [input, setInput] = useState({
     email: "",
@@ -30,6 +30,7 @@ export default function Signup() {
       return
     }
     addUser(input)
+    props.history.push("/home")
   }
 
   return (

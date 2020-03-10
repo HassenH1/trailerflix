@@ -4,8 +4,20 @@ export const UserContext = createContext()
 
 export default function UserContextProvider(props) {
   //adding user to backend
-  const addUser = (userInput) => {
-    console.log(userInput, "<---------------user input from context side")
+  const addUser = async (userInput) => {
+
+    try {
+      const success = await fetch("http://localhost:8000/signup", {
+        method: "POST",
+        body: JSON.stringify(userInput),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      })
+    } catch (err) {
+      console.log(err)
+    }
+    
   }
 
   return (
