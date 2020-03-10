@@ -11,6 +11,8 @@ export default function Signup(props) {
     password: ""
   })
 
+
+
   const [error, setError] = useState("")
 
   const handleInput = (e) => {
@@ -32,6 +34,8 @@ export default function Signup(props) {
     addUser(input)
     props.history.push("/home")
   }
+
+  
 
   return (
     <div className="body">

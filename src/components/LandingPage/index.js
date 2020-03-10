@@ -27,7 +27,6 @@ export default function LandingPage() {
 
       <section className="tab-content">
         <div className="container">
-          {/* tab content 1 */}
           <div id="tab-1-content" className="tab-content-item show">
             <div className="tab-1-content-inner">
               <div>
@@ -41,28 +40,6 @@ export default function LandingPage() {
               <img src="https://is5-ssl.mzstatic.com/image/thumb/Purple124/v4/31/90/18/319018cc-65f5-9e6a-18f1-a93e1ab6b897/source/256x256bb.jpg" alt="trailer" height="350" width="50" />
             </div>
           </div>
-          {/* <div id="tab-2-content" className="tab-content-item">
-            <div className="tab-2-content-top">
-              <p className="text-lg">
-                Watch TV shows and movies trailers anytime, anywhere. 
-              </p>
-              <a href="#" className="btn btn-lg">Watch and Leave a Review</a>
-            </div>
-            <div className="tab-2-content-bottom">
-              <div>
-                <img src="https://i.ibb.co/DpdN7Gn/tab-content-2-1.png" alt="img" />
-                <p className="text-md">Watch</p>
-                <p className="text-dark">Watch on any device!</p>
-              </div>
-
-              <div>
-                <img src="https://d3371sz2atf3uv.cloudfront.net/uiassets/images_sep/svg/icon-testimonials.svg" alt="img" />
-                <p className="text-md">Review</p>
-                <p className="text-dark">After watching Leave a Review</p>
-              </div>
-
-            </div> 
-  </div> */}
         </div>
       </section>
     </div>

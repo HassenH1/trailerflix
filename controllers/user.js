@@ -3,21 +3,44 @@ const router = express.Router()
 
 const User = require("../models/User.js")
 
-router.post("/signup", async (req,res) => {
+router.post("/signup", async (req, res) => {
   try {
     const createUser = await User.create(req.body)
 
     res.json(createUser)
 
-  } catch(err) {
+  } catch (err) {
 
     console.log(err)
-  
+
   }
 })
 
-router.get("/signin", (req,res) => {
-  console.log(req.body, "<---------------------------------------------signin route expressssssssssss")
+router.post("/signin", async (req, res) => {
+  try {
+    const get = await User.findOne({ "email": req.body.email, "password": req.body.password })
+
+    if (get === null) {
+
+      res.status(400).send({
+      
+        message: 'This is an error!'
+      
+      });
+      
+      return
+    
+    } else {
+
+      res.json(get)
+
+    }
+
+  } catch (err) {
+
+    console.log(err)
+
+  }
 })
 
 module.exports = router
