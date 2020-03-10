@@ -61,6 +61,7 @@ button:hover {
 .dropdown {
   position: relative;
   display: inline-block;
+  /* height: 36px; */
 }
 
 .dropdown-content {

@@ -65,8 +65,13 @@ export default function UserContextProvider(props) {
     }
   }
 
+  const signOutUser = () => {
+    setUser("")
+    localStorage.removeItem('user')
+  }
+
   return (
-    <UserContext.Provider value={{ addUser, getUser, user, wrongValidation }}>
+    <UserContext.Provider value={{ addUser, getUser, signOutUser, user, wrongValidation }}>
       {props.children}
     </UserContext.Provider>
   )

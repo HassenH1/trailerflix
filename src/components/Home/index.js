@@ -8,7 +8,7 @@ import BigCarouselNowPlaying from '../BigCarouselNowPlaying'
 
 export default function Home() {
   const { nowPlaying, popular, topRated } = useContext(DataFetchContext)
-  const { user, getUser } = useContext(UserContext)
+  const { user, getUser, signOutUser } = useContext(UserContext)
 
   useEffect(() => {
 
@@ -21,13 +21,13 @@ export default function Home() {
     } else {
 
       console.log("nothing should happen")
-      
+
     }
   }, [])
 
   return (
     <>
-      <Navbar user={user}/>
+      <Navbar user={user} signOutUser={signOutUser}/>
       <BigCarouselNowPlaying nowPlaying={nowPlaying} />
       <CarouselPopular popular={popular} />
       <CarouselTopRated topRated={topRated} />
