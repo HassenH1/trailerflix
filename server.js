@@ -17,11 +17,11 @@ app.use(methodOverride('_method'))
 
 /**Controllers**/
 app.use('/', user)
- 
+
 app.get('/', function (req, res) {
   res.send('Hello World')
 })
- 
+
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`)
 })

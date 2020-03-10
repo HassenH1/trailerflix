@@ -27,7 +27,7 @@ export default function Home() {
 
   return (
     <>
-      <Navbar user={user} signOutUser={signOutUser}/>
+      <Navbar user={user} signOutUser={signOutUser} />
       <BigCarouselNowPlaying nowPlaying={nowPlaying} />
       <CarouselPopular popular={popular} />
       <CarouselTopRated topRated={topRated} />
