@@ -3,6 +3,7 @@ import React, { createContext, useEffect, useState } from 'react'
 export const UserContext = createContext()
 
 export default function UserContextProvider(props) {
+  
   const [user, setUser] = useState("")
 
   const [wrongValidation, setWrongValidation] = useState("")
@@ -18,7 +19,7 @@ export default function UserContextProvider(props) {
         }
       })
       const successJson = await success.json()
-      // console.log(successJson, "<-----------from signout context json success")
+
       localStorage.setItem('user', JSON.stringify(successJson))
 
     } catch (err) {
@@ -28,8 +29,9 @@ export default function UserContextProvider(props) {
     }
   }
 
+  //login user
   const getUser = async (gettingUser) => {
-    console.log(gettingUser, "<----------------------getting a user from localstorage")
+
     try {
       const i = await fetch("http://localhost:8000/signin", {
         method: "POST",
@@ -41,7 +43,6 @@ export default function UserContextProvider(props) {
       })
 
       const iJson = await i.json()
-      console.log(iJson, "<--------------what i get back??")
 
       if (iJson.message === "This is an error!") {
 
@@ -65,12 +66,14 @@ export default function UserContextProvider(props) {
     }
   }
 
+  //signing out
   const signOutUser = () => {
     setUser("")
     localStorage.removeItem('user')
   }
 
   return (
+    //passing values down as "props"
     <UserContext.Provider value={{ addUser, getUser, signOutUser, user, wrongValidation }}>
       {props.children}
     </UserContext.Provider>
