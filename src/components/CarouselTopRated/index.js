@@ -21,9 +21,8 @@ const CarouselTopRated = (props) => {
   const images = props.topRated && props.topRated.results.map((elem, i) => {
     return (
       <div className="swiper-slide" key={i}>
-        {console.log(elem, "<---------------------------------------------ruin shit")}
         {/* {missing exact to= "show page here with id passing thru"} */}
-        <Link ><img src={`https://image.tmdb.org/t/p/w500${elem.poster_path}`} key={i} width="30" height="10" alt="top rated" /></Link>
+        <Link className="link"><img src={`https://image.tmdb.org/t/p/w500${elem.poster_path}`} key={i} width="30" height="10" alt="top rated" /></Link>
       </div>
     )
   })
