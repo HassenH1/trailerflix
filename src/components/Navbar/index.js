@@ -14,7 +14,17 @@ export default function Navbar(props) {
         </nav>
         <div>
           <a href="" className="home">Home</a>
-          <a href="/signin" className="btn btn-rounded">Sign In</a>
+          {
+            props && props.user.name
+              ? <div className="dropdown">
+                <p className="btn drop-btn">Hello {props.user.name}!</p>
+                <div class="dropdown-content">
+                  <a href="#">Profile</a>
+                  <a href="#">Sign out</a>
+                </div>
+              </div>
+              : <a href="/signin" className="btn btn-rounded">Sign In</a>
+          }
         </div>
       </header>
     </div>

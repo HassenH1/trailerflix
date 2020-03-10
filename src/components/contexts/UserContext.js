@@ -50,7 +50,6 @@ export default function UserContextProvider(props) {
 
       }
 
-
     } catch (err) {
 
       console.log(err)

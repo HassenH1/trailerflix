@@ -12,7 +12,6 @@ export default function Home() {
   return (
     <>
       <Navbar user={user}/>
-      {console.log(user, "<------------------------------------from the home route")}
       <BigCarouselNowPlaying nowPlaying={nowPlaying} />
       <CarouselPopular popular={popular} />
       <CarouselTopRated topRated={topRated} />
