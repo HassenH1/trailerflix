@@ -1,9 +1,13 @@
 const express = require("express")
 const router = express.Router()
 
-router.post("/", (req,res) => {
-  console.log("the signup route is hitting in expresssssssssssssssssssssssssssssssssssssss!")
-  console.log(req.body, "<-------------------------------------------might work for real")
+router.post("/", async (req,res) => {
+  console.log(req.body, "<-------------------------------------------its working")
+  try {
+
+  } catch(err) {
+    console.log(err)
+  }
 })
 
 module.exports = router
