@@ -5,6 +5,7 @@ import Signin from './components/Signin';
 import Signup from './components/Signup';
 import Home from './components/Home';
 import DataFetchContextProvider from './components/contexts/DataFetchContext'
+import UserContextProvider from './components/contexts/UserContext';
 
 
 function App() {
@@ -12,9 +13,11 @@ function App() {
     <Switch>
       <Route exact path='/' component={LandingPage} />
       <Route exact path='/signin' component={Signin} />
-      <Route exact path='/signup' component={Signup} />
       <DataFetchContextProvider>
-        <Route exact path='/home' component={Home} />
+        <UserContextProvider>
+          <Route exact path='/signup' component={Signup} />
+          <Route exact path='/home' component={Home} />
+        </UserContextProvider>
       </DataFetchContextProvider>
     </Switch>
   );

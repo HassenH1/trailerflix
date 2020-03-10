@@ -1,7 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import './signup.css'
+import { UserContext } from '../contexts/UserContext'
 
 export default function Signup() {
+  const { addUser } = useContext(UserContext) 
+
   const [input, setInput] = useState({
     email: "",
     name: "",
@@ -26,7 +29,7 @@ export default function Signup() {
       }, 5000)
       return
     }
-
+    addUser(input)
   }
 
   return (
