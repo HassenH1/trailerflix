@@ -4,7 +4,6 @@ import './navbar.css'
 export default function Navbar(props) {
   return (
     <div>
-      {console.log(props, "<--------------------------------from the navbar")}
       <header className="nav-header">
         <a href="/"><img className="logo-img" src="https://i.ibb.co/r5krrdz/logo.png" alt="logo" /></a>
         <nav>

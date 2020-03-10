@@ -4,6 +4,7 @@ export const UserContext = createContext()
 
 export default function UserContextProvider(props) {
   const [user, setUser] = useState("")
+
   const [wrongValidation, setWrongValidation] = useState("")
 
   //adding user to backend
@@ -16,8 +17,14 @@ export default function UserContextProvider(props) {
           "Content-Type": "application/json"
         }
       })
+      const successJson = await success.json()
+      console.log(successJson, "<-----------from signout context json success")
+      // localStorage.setItem('user', JSON.stringify(userInput))
+
     } catch (err) {
+
       console.log(err)
+
     }
   }
 
@@ -45,7 +52,7 @@ export default function UserContextProvider(props) {
         }, 5000)
 
       } else {
-        
+
         setUser({ ...iJson })
 
       }
