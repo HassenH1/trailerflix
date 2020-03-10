@@ -4,7 +4,6 @@ const router = express.Router()
 const User = require("../models/User.js")
 
 router.post("/signup", async (req,res) => {
-  console.log(req.body, "<-------------------------------------------its working")
   try {
     const createUser = await User.create(req.body)
 
@@ -18,7 +17,7 @@ router.post("/signup", async (req,res) => {
 })
 
 router.get("/signin", (req,res) => {
-  console.log()
+  console.log(req.body, "<---------------------------------------------signin route expressssssssssss")
 })
 
 module.exports = router
