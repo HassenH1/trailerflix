@@ -22,6 +22,8 @@ export default function UserContextProvider(props) {
 
       localStorage.setItem('user', JSON.stringify(successJson))
 
+      getUser(successJson)
+
     } catch (err) {
 
       console.log(err)
