@@ -2,8 +2,9 @@ import React, { useEffect } from 'react'
 import './carousel.css'
 import Swiper from "swiper"
 import "swiper/css/swiper.css";
+import { withRouter, Link } from 'react-router-dom'
 
-export default function CarouselPopular(props) {
+const CarouselTopRated = (props) => {
 
   useEffect(() => {
     let swiper = new Swiper('.swiper-container', {
@@ -20,7 +21,9 @@ export default function CarouselPopular(props) {
   const images = props.topRated && props.topRated.results.map((elem, i) => {
     return (
       <div className="swiper-slide" key={i}>
-        <img src={`https://image.tmdb.org/t/p/w500${elem.poster_path}`} key={i} width="30" height="10" alt="top rated"/>
+        {console.log(elem, "<---------------------------------------------ruin shit")}
+        {/* {missing exact to= "show page here with id passing thru"} */}
+        <Link ><img src={`https://image.tmdb.org/t/p/w500${elem.poster_path}`} key={i} width="30" height="10" alt="top rated" /></Link>
       </div>
     )
   })
@@ -40,3 +43,4 @@ export default function CarouselPopular(props) {
     </>
   )
 }
+export default withRouter(CarouselTopRated)

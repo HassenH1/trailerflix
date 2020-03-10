@@ -70,3 +70,9 @@ img {
 .swiper-slide:last-child {
   margin: 0 -30px;
 }
+
+.link {
+  padding: 0;
+  margin: 0;
+  height: 40.9vh;
+}

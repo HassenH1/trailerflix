@@ -1,8 +1,9 @@
 import React, { useState, useContext } from 'react'
 import './signin.css'
 import { UserContext } from '../contexts/UserContext'
+import { withRouter, Link } from 'react-router-dom'
 
-export default function Signin(props) {
+const Signin = (props) => {
   const { getUser, wrongValidation } = useContext(UserContext)
 
   const [input, setInput] = useState({
@@ -52,10 +53,11 @@ export default function Signin(props) {
           <div style={{ textAlign: "center", color: "red" }}>{error}</div>
           <div style={{ textAlign: "center", color: "red" }}>{wrongValidation}</div>
           <div className="new-new">
-            <p className="p-sm">New to TrailerFlix? <a href="/signup">Sign up now!</a></p>
+            <p className="p-sm">New to TrailerFlix? <Link exact to="/signup">Sign up now!</Link></p>
           </div>
         </div>
       </header>
     </div>
   )
 }
+export default withRouter(Signin)

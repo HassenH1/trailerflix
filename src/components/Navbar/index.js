@@ -1,31 +1,33 @@
 import React from 'react'
 import './navbar.css'
+import { Link, withRouter } from 'react-router-dom'
 
-export default function Navbar(props) {
+const Navbar = (props) => {
   return (
     <div>
       <header className="nav-header">
-        <a href="/"><img className="logo-img" src="https://i.ibb.co/r5krrdz/logo.png" alt="logo" /></a>
-        <nav>
+        <Link exact to="/"><img className="logo-img" src="https://i.ibb.co/r5krrdz/logo.png" alt="logo" /></Link>
+        {/* <nav>
           <ul className="nav-links">
             <li><a href="#"></a></li>
           </ul>
-        </nav>
+        </nav> */}
         <div>
-          <a href="/home" className="home">Home</a>
+          <Link exact to="/home" className="home">Home</Link>
           {
             props && props.user.name
               ? <div className="dropdown">
                 <p className="btn drop-btn">Hello {props.user.name}!</p>
                 <div className="dropdown-content">
-                  <a href="#">Profile</a>
-                  <a href="#" onClick={props.signOutUser}>Sign out</a>
+                  <Link exact to="#">Profile</Link>
+                  <Link exact to="#" onClick={props.signOutUser}>Sign out</Link>
                 </div>
               </div>
-              : <a href="/signin" className="btn btn-rounded">Sign In</a>
+              : <Link exact to="/signin" className="btn btn-rounded">Sign In</Link>
           }
         </div>
       </header>
     </div>
   )
 }
+export default withRouter(Navbar)

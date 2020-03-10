@@ -3,8 +3,9 @@ import AwesomeSlider from 'react-awesome-slider';
 import withAutoplay from 'react-awesome-slider/dist/autoplay';
 import 'react-awesome-slider/dist/styles.css';
 import './bigcarousel.css'
+import { withRouter, Link } from 'react-router-dom'
 
-export default function BigCarouselNowPlaying(props) {
+function BigCarouselNowPlaying(props) {
 
   const shortingString = (str) => {
     let newS = ""
@@ -21,7 +22,7 @@ export default function BigCarouselNowPlaying(props) {
       <div key={i} className="IS-THIS-IT">
 
         <div className="image-container">
-          <img src={`https://image.tmdb.org/t/p/original${elem.poster_path}`} alt="now playing" />
+          <Link><img src={`https://image.tmdb.org/t/p/original${elem.poster_path}`} alt="now playing" /></Link>
         </div>
 
         <div className="big-text">
@@ -36,7 +37,7 @@ export default function BigCarouselNowPlaying(props) {
 
           <br />
 
-          <button className="btn"><a href="#">Watch Trailer</a></button>
+          <button className="btn"><Link exact to="#">Watch Trailer</Link></button>
         </div>
 
       </div>
@@ -60,6 +61,8 @@ export default function BigCarouselNowPlaying(props) {
     </>
   )
 }
+export default withRouter(BigCarouselNowPlaying)
+
 // this might help the image size 
 // .parent {
 //   width: 100px;

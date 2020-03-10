@@ -1,8 +1,9 @@
 import React, { useState, useContext } from 'react'
 import './signup.css'
 import { UserContext } from '../contexts/UserContext'
+import { withRouter, Link } from 'react-router-dom'
 
-export default function Signup(props) {
+const Signup = (props) => {
   const { addUser } = useContext(UserContext)
 
   const [input, setInput] = useState({
@@ -49,10 +50,12 @@ export default function Signup(props) {
           </form>
           <div style={{ textAlign: "center", color: "red" }}>{error}</div>
           <div className="new-new">
-            <p className="p-sm">Already have an Account? <a href="/signin">Sign in.</a></p>
+            <p className="p-sm">Already have an Account? <Link href="/signin">Sign in.</Link></p>
           </div>
         </div>
       </header>
     </div>
   )
 }
+
+export default withRouter(Signup)

@@ -1,18 +1,19 @@
 import React from 'react'
 import './landingpage.css'
+import { Link, withRouter } from 'react-router-dom'
 
-export default function LandingPage() {
+const LandingPage = () => {
   return (
     <div className="body">
       <header className="showcase">
         <div className="showcase-top">
           <img src="https://i.ibb.co/r5krrdz/logo.png" alt="TrailerFlix" />
-          <a href="/signin" className="btn btn-rounded">Sign In</a>
+          <Link exact to="/signin" className="btn btn-rounded">Sign In</Link>
         </div>
         <div className="showcase-content">
           <h1>Check out Trailers</h1>
           <p>Watch Anytime, Anywhere</p>
-          <a href="/home" className="btn btn-xl">Watch Now <i className="fas fa-chevron-right"></i></a>
+          <Link exact to="/home" className="btn btn-xl">Watch Now <i className="fas fa-chevron-right"></i></Link>
         </div>
       </header>
 
@@ -33,9 +34,9 @@ export default function LandingPage() {
                 <p className="text-lg">
                   Watch all the movies and tv show trailer anytime.
                 </p>
-                <a href="/home" className="btn btn-lg">
+                <Link exact to="/home" className="btn btn-lg">
                   Ready to Watch
-                </a>
+                </Link>
               </div>
               <img src="https://is5-ssl.mzstatic.com/image/thumb/Purple124/v4/31/90/18/319018cc-65f5-9e6a-18f1-a93e1ab6b897/source/256x256bb.jpg" alt="trailer" height="350" width="50" />
             </div>
@@ -45,3 +46,5 @@ export default function LandingPage() {
     </div>
   )
 }
+
+export default withRouter(LandingPage)
