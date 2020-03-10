@@ -11,8 +11,8 @@ export default function Home() {
   const { user } = useContext(UserContext)
   return (
     <>
-      <Navbar />
-      {console.log(user, "<------------------------------------the user is?")}
+      <Navbar user={user}/>
+      {console.log(user, "<------------------------------------from the home route")}
       <BigCarouselNowPlaying nowPlaying={nowPlaying} />
       <CarouselPopular popular={popular} />
       <CarouselTopRated topRated={topRated} />
