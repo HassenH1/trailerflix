@@ -17,7 +17,7 @@ export default function Navbar(props) {
             props && props.user.name
               ? <div className="dropdown">
                 <p className="btn drop-btn">Hello {props.user.name}!</p>
-                <div class="dropdown-content">
+                <div className="dropdown-content">
                   <a href="#">Profile</a>
                   <a href="#">Sign out</a>
                 </div>

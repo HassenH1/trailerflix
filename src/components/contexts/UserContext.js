@@ -19,7 +19,7 @@ export default function UserContextProvider(props) {
       })
       const successJson = await success.json()
       // console.log(successJson, "<-----------from signout context json success")
-      localStorage.setItem('user', JSON.stringify(successJson.name))
+      localStorage.setItem('user', JSON.stringify(successJson))
 
     } catch (err) {
 
@@ -29,7 +29,7 @@ export default function UserContextProvider(props) {
   }
 
   const getUser = async (gettingUser) => {
-
+    console.log(gettingUser, "<----------------------getting a user from localstorage")
     try {
       const i = await fetch("http://localhost:8000/signin", {
         method: "POST",
@@ -54,6 +54,7 @@ export default function UserContextProvider(props) {
       } else {
 
         setUser({ ...iJson })
+        localStorage.setItem('user', JSON.stringify(iJson))
 
       }
 
