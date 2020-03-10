@@ -3,9 +3,9 @@ const app = express()
 const PORT = 8000
 const bodyParser = require('body-parser')
 var methodOverride = require('method-override')
-const signUp = require('./controllers/signup.js')
+const user = require('./controllers/user.js')
 const cors = require('cors')
-
+require('./db/db.js')
 
 /***middleware***/
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -16,7 +16,7 @@ app.use(cors())
 app.use(methodOverride('_method'))
 
 /**Controllers**/
-app.use('/signup', signUp)
+app.use('/', user)
  
 app.get('/', function (req, res) {
   res.send('Hello World')
