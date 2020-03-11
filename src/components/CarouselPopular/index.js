@@ -22,7 +22,7 @@ const CarouselPopular = (props) => {
     return (
       <div className="swiper-slide" key={i}>
         {/* missing exact to = some show page here */}
-        <Link className="link"><img src={`https://image.tmdb.org/t/p/w500${elem.poster_path}`} width="30" height="10" alt="popular" /></Link>
+        <Link className="link" exact to={`movie/${elem.id}`}><img src={`https://image.tmdb.org/t/p/w500${elem.poster_path}`} width="30" height="10" alt="popular" /></Link>
       </div>
     )
   })
