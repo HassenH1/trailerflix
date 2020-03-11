@@ -1,8 +1,12 @@
 import React, { useContext, useEffect } from 'react'
 import { DataFetchContext } from '../contexts/DataFetchContext'
+import { UserContext } from '../contexts/UserContext'
+import Navbar from '../Navbar'
+
 
 const Showpage = (props) => {
   const { fetchingVideoDetails, details, video } = useContext(DataFetchContext)
+  const { user, signOutUser } = useContext(UserContext)
 
   useEffect(() => {
     console.log(props.match.params.id, "<-------------does this go first?")
@@ -11,6 +15,8 @@ const Showpage = (props) => {
 
   return (
     <div>
+      <Navbar user={user} signOutUser={signOutUser} />
+
       <h1>Show page for each movie</h1>
       {
         video && video.results
