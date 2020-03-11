@@ -1,9 +1,10 @@
 import React from 'react'
 
-export default function Showpage(props) {
+const Showpage = (props) => {
   return (
     <div>
       Show page for each movie
     </div>
   )
 }
+export default Showpage
