@@ -7,6 +7,8 @@ const DataFetchContextProvider = (props) => {
   const [popular, SetPopular] = useState("")
   const [topRated, SetTopRated] = useState("")
   const [upcoming, SetUpcoming] = useState("")
+  const [details, setDetails] = useState("")
+  const [video, setVideo] = useState("")
 
   const fetchingData = async () => {
     try {
@@ -33,7 +35,7 @@ const DataFetchContextProvider = (props) => {
       })
       const aJson = await a.json()
       SetPopular({ ...aJson })
-    } catch(err) {
+    } catch (err) {
       console.log(err)
     }
 
@@ -47,7 +49,7 @@ const DataFetchContextProvider = (props) => {
       })
       const nJson = await n.json()
       SetTopRated({ ...nJson })
-    } catch(err) {
+    } catch (err) {
       console.log(err)
     }
 
@@ -61,7 +63,45 @@ const DataFetchContextProvider = (props) => {
       })
       const mJson = await m.json()
       SetUpcoming({ ...mJson })
-    } catch(err) {
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+  const fetchingVideoDetails = async (id) => {
+    console.log(id, "does the id go thru?")
+    try {
+      const v = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=e0282b31393a2e65727c799e6e985ef1&language=en-US`, {
+        method: "GET",
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        }
+      })
+      const vJson = await v.json()
+      setDetails(vJson)
+      console.log(details, "<_-------------------------------------------------------the details should be cool?s")
+      gettingVideNow(details)
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+  const gettingVideNow = async (key) => {
+    console.log(key, "<_---------------------------------------------whats this?")
+    try {
+      const vid = await fetch(`https://api.themoviedb.org/3/movie/${key.id}/videos?api_key=e0282b31393a2e65727c799e6e985ef1&language=en-US
+      `, {
+        method: "GET",
+        header: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        }
+      })
+      const vidJson = await vid.json()
+      console.log(vidJson, "<--------------------------------------the video details now?")
+      setVideo(vidJson)
+    } catch (err) {
       console.log(err)
     }
   }
@@ -71,7 +111,7 @@ const DataFetchContextProvider = (props) => {
   }, [])
 
   return (
-    <DataFetchContext.Provider value={{ nowPlaying, popular, topRated, upcoming }}>
+    <DataFetchContext.Provider value={{ nowPlaying, popular, topRated, upcoming, fetchingVideoDetails, details, video }}>
       {props.children}
     </DataFetchContext.Provider>
   )
