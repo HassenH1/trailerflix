@@ -80,7 +80,7 @@ const DataFetchContextProvider = (props) => {
       })
       const vJson = await v.json()
       console.log(vJson, "<----------------------------------------------vJson here")
-      // setDetails(vJson)
+      setDetails(vJson)
       gettingVideNow(vJson)
     } catch (err) {
       console.log(err)

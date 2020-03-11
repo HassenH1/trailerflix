@@ -6,9 +6,33 @@
   justify-content: center;
   margin: 1rem auto;
 }
-/* style={{border: "2px solid red", height: "50%", width: "80%", display: "flex", justifyContent: "center", margin: "0 auto"}} */
+
 .video-size {
   max-width: 100%;
   width: 1400px;
   height: 750px;
+}
+
+.detail-for-video {
+  border: 2px solid yellow;
+  height: 600px;
+  width: 80%;
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.one {
+  border: 1px solid salmon;
+  height: 200px;
+  width: 45%;
+  margin: auto;
+}
+
+.two {
+  border: 1px solid orange;
+  height: 200px;
+  width: 45%;
+  margin: auto;
 }

@@ -23,8 +23,18 @@ const Showpage = (props) => {
             ? <embed src={`https://www.youtube.com/embed/${video.results[0].key}`} allowFullScreen={true} className="video-size" />
             : "video is not here"
         }
+                {console.log(details, "<---------------whats in here?")}
+
       </div>
-      <hr />
+      <hr style={{width: "50%", margin: "2rem auto"}}/>
+      <div className="detail-for-video">
+        <div className="one">
+
+        </div>
+        <div className="two">
+
+        </div>
+      </div>
     </div>
   )
 }
