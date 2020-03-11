@@ -6,7 +6,7 @@ const Navbar = (props) => {
   return (
     <div>
       <header className="nav-header">
-        <Link exact to="/"><img className="logo-img" src="https://i.ibb.co/r5krrdz/logo.png" alt="logo" /></Link>
+        <Link exact to={"/"}><img className="logo-img" src="https://i.ibb.co/r5krrdz/logo.png" alt="logo" /></Link>
         {/* <nav>
           <ul className="nav-links">
             <li><a href="#"></a></li>

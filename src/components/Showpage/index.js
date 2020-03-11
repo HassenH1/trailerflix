@@ -5,7 +5,7 @@ const Showpage = (props) => {
   const { fetchingVideoDetails, details, video } = useContext(DataFetchContext)
 
   useEffect(() => {
-    // console.log(props.match.params.id, "<-------------does this go first?")
+    console.log(props.match.params.id, "<-------------does this go first?")
     fetchingVideoDetails(props.match.params.id, "<-------------------is this second?")
   }, [])
 
@@ -13,6 +13,11 @@ const Showpage = (props) => {
     <div>
       {/* {console.log(video.results, "<-----------------------------coming from show page")} */}
       <h1>Show page for each movie</h1>
+      {
+        video && video.results
+          ? <embed src={`https://www.youtube.com/embed/${video.results[0].key}`} allowFullScreen="true" with="425" height="344" />
+          : "video is not here"
+      }
       {/* <embed src={`https://www.youtube.com/embed/${video.results[0].key}`} allowfullscreen="true" width="425" height="344" /> */}
     </div>
   )
