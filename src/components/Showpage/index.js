@@ -10,8 +10,7 @@ const Showpage = (props) => {
   const { user, signOutUser } = useContext(UserContext)
 
   useEffect(() => {
-    console.log(props.match.params.id, "<-------------does this go first?")
-    fetchingVideoDetails(props.match.params.id, "<-------------------is this second?")
+    fetchingVideoDetails(props.match.params.id)
   }, [])
 
   return (
@@ -25,6 +24,7 @@ const Showpage = (props) => {
             : "video is not here"
         }
       </div>
+      <hr />
     </div>
   )
 }
