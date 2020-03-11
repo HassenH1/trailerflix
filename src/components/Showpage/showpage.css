@@ -1,0 +1,14 @@
+.video-container {
+  border: 2px solid black;
+  height: 50%;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+/* style={{border: "2px solid red", height: "50%", width: "80%", display: "flex", justifyContent: "center", margin: "0 auto"}} */
+.video-size {
+  max-width: 100%;
+  width: 1400px;
+  height: 750px;
+}

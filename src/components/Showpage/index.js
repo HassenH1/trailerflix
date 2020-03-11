@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from 'react'
 import { DataFetchContext } from '../contexts/DataFetchContext'
 import { UserContext } from '../contexts/UserContext'
 import Navbar from '../Navbar'
+import './showpage.css'
 
 
 const Showpage = (props) => {
@@ -17,12 +18,13 @@ const Showpage = (props) => {
     <div>
       <Navbar user={user} signOutUser={signOutUser} />
 
-      <h1>Show page for each movie</h1>
-      {
-        video && video.results
-          ? <embed src={`https://www.youtube.com/embed/${video.results[0].key}`} allowFullScreen={true} with="425" height="344" />
-          : "video is not here"
-      }
+      <div className="video-container">
+        {
+          video && video.results
+            ? <embed src={`https://www.youtube.com/embed/${video.results[0].key}`} allowFullScreen={true} className="video-size" />
+            : "video is not here"
+        }
+      </div>
     </div>
   )
 }
