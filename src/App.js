@@ -17,7 +17,7 @@ function App() {
           <Route exact path='/signin' component={Signin} />
           <Route exact path='/signup' component={Signup} />
           <Route exact path='/home' component={Home} />
-          <Route exact path='movie/:id' render={() => <Showpage />} />
+          <Route exact path='/movie/:id' component={Showpage} />
         </UserContextProvider>
       </DataFetchContextProvider>
     </Switch>

@@ -3,7 +3,7 @@ import React from 'react'
 const Showpage = (props) => {
   return (
     <div>
-      Show page for each movie
+      <h1>Show page for each movie</h1>
     </div>
   )
 }

@@ -22,7 +22,7 @@ function BigCarouselNowPlaying(props) {
       <div key={i} className="IS-THIS-IT">
 
         <div className="image-container">
-          <Link><img src={`https://image.tmdb.org/t/p/original${elem.poster_path}`} alt="now playing" /></Link>
+          <Link exact to={`/movie/${elem.id}`}><img src={`https://image.tmdb.org/t/p/original${elem.poster_path}`} alt="now playing" /></Link>
         </div>
 
         <div className="big-text">
