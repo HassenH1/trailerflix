@@ -79,16 +79,16 @@ const DataFetchContextProvider = (props) => {
         }
       })
       const vJson = await v.json()
-      setDetails(vJson)
-      console.log(details, "<_-------------------------------------------------------the details should be cool?s")
-      gettingVideNow(details)
+      console.log(vJson, "<----------------------------------------------vJson here")
+      // setDetails(vJson)
+      gettingVideNow(vJson)
     } catch (err) {
       console.log(err)
     }
   }
 
   const gettingVideNow = async (key) => {
-    console.log(key, "<_---------------------------------------------whats this?")
+    console.log(key)
     try {
       const vid = await fetch(`https://api.themoviedb.org/3/movie/${key.id}/videos?api_key=e0282b31393a2e65727c799e6e985ef1&language=en-US
       `, {
