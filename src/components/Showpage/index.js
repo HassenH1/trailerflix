@@ -10,7 +10,12 @@ const Showpage = (props) => {
   const { user, signOutUser } = useContext(UserContext)
 
   useEffect(() => {
-    fetchingVideoDetails(props.match.params.id)
+    if (props.match.params.id) {
+      fetchingVideoDetails(props.match.params.id)
+    } else {
+      console.log("useEffect shouldnt be there")
+    }
+
   }, [])
 
   return (
@@ -20,16 +25,18 @@ const Showpage = (props) => {
       <div className="video-container">
         {
           video && video.results
-            ? <embed src={`https://www.youtube.com/embed/${video.results[0].key}`} allowFullScreen={true} className="video-size" />
-            : "video is not here"
+            ? <div>
+              <embed src={`https://www.youtube.com/embed/${video.results[0].key}`} allowFullScreen={true} className="video-size" />
+              {console.log(video.results[0].key, "<-----------------------------------------east side lunny")}
+            </div>
+            : "No video here"
         }
-        {console.log(details, "<---------------whats in here?")}
-
+        {/* {console.log(video.results[0].key, "<--------------------------------------eastside lunny")} */}
       </div>
       <hr style={{ width: "50%", margin: "2rem auto" }} />
       <div className="detail-for-video">
         <div className="one">
-          <img src={`https://image.tmdb.org/t/p/w500${details.poster_path}`} alt="popular" className="img"/>
+          <img src={`https://image.tmdb.org/t/p/w500${details.poster_path}`} alt="popular" className="img" />
         </div>
         <div className="two">
 

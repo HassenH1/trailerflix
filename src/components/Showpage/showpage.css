@@ -1,7 +1,7 @@
 .video-container {
   border: 2px solid red;
   height: 50%;
-  width: 80%;
+  width: 100%;
   display: flex;
   justify-content: center;
   margin: 1rem auto;
@@ -9,7 +9,7 @@
 
 .video-size {
   max-width: 100%;
-  width: 1400px;
+  width: 1500px;
   height: 750px;
 }
 

@@ -69,7 +69,7 @@ const DataFetchContextProvider = (props) => {
   }
 
   const fetchingVideoDetails = async (id) => {
-    console.log(id, "does the id go thru?")
+    console.log(id, "<---------------------------------------should be a new id everytime")
     try {
       const v = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=e0282b31393a2e65727c799e6e985ef1&language=en-US`, {
         method: "GET",
@@ -81,14 +81,14 @@ const DataFetchContextProvider = (props) => {
       const vJson = await v.json()
       console.log(vJson, "<----------------------------------------------vJson here")
       setDetails(vJson)
-      gettingVideNow(vJson)
+      await gettingVideNow(vJson)
     } catch (err) {
       console.log(err)
     }
   }
 
   const gettingVideNow = async (key) => {
-    console.log(key)
+    console.log(key, "<----------------------------------------------should be a new key everytime")
     try {
       const vid = await fetch(`https://api.themoviedb.org/3/movie/${key.id}/videos?api_key=e0282b31393a2e65727c799e6e985ef1&language=en-US
       `, {

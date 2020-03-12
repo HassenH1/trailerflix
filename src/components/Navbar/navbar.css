@@ -4,11 +4,16 @@
   cursor: pointer;
 }
 
+.link-logo {
+  width: 20.6rem;
+}
+
 li, a {
   font-weight: 500;
   font-size: 16px;
   color: #ecf0f1;
   text-decoration: none;
+  /* width: 20.6rem; */
 }
 
 .nav-header {
