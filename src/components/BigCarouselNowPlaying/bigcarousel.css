@@ -1,8 +1,25 @@
+.awssld__wrapper {
+  display: block;
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+/*original*/
 /* .awssld__wrapper {
-  height: 50% !important;
-  width: 100% !important;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+  width: 80%;
+  padding: 0;
+  margin: 0;
 } */
 
+/* .awssld__box {
+  height: 10px;
+} */
 
 .awssld__content {
   height: 41.9rem;
@@ -19,6 +36,7 @@
 
 .image-container {
   width: 30%;
+  padding-bottom: 1px;
 }
 
 .big-text {
