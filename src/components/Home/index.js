@@ -11,6 +11,7 @@ export default function Home() {
   const { user, getUser, signOutUser } = useContext(UserContext)
 
   useEffect(() => {
+    window.scrollTo(0, 0)
 
     if (localStorage.getItem("user")) {
 
