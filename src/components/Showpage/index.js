@@ -69,6 +69,9 @@ const Showpage = (props) => {
             ? <Form />
             : "nothing to see here"
           }
+          <div style={{width: "100%", height: "100px", border: "1px solid pink"}}>
+            Show a list of reviews here
+          </div>
         </div>
       </div>
     </div>
