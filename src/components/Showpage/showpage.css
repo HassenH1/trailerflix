@@ -1,5 +1,6 @@
 .video-container {
-  border: 2px solid red;
+  border-top: 1px solid red;
+  border-bottom: 1px solid red;
   height: 50%;
   width: 100%;
   display: flex;
@@ -10,12 +11,13 @@
 .video-size {
   max-width: 100%;
   width: 1500px;
-  height: 750px;
+  /* height: 750px; */
+  height: 650px;
 }
 
 .detail-for-video {
-  border: 2px solid yellow;
-  height: 600px;
+  /* border: 2px solid yellow; */
+  height: 700px;
   width: 80%;
   margin: 1rem auto;
   display: flex;
@@ -31,12 +33,19 @@
   /* margin: auto; */
 
 .two {
-  border: 1px solid orange;
-  height: 200px;
+  /* border: 1px solid orange; */
+  height: 400px;
   width: 45%;
   margin: auto;
+  font-size: 20px;
+  text-align: left;
 }
 
 .img {
-  height: 595px;
+  height: 697px;
+}
+
+.check-reviews {
+  /* align-items: center; */
+  text-align: center;
 }
