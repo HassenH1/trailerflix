@@ -49,3 +49,18 @@
   /* align-items: center; */
   text-align: center;
 }
+
+.three {
+  /* border: 1px solid orange; */
+  height: 400px;
+  width: 60%;
+  margin: auto;
+  font-size: 20px;
+  text-align: center;
+  background: #140f0a;
+}
+
+.inside {
+  margin-top: 1rem;
+  border: 1px solid purple;
+}

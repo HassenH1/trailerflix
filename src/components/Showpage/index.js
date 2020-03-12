@@ -3,17 +3,31 @@ import { DataFetchContext } from '../contexts/DataFetchContext'
 import { UserContext } from '../contexts/UserContext'
 import Navbar from '../Navbar'
 import './showpage.css'
+import Form from '../Form'
 
 
 const Showpage = (props) => {
   const { fetchingVideoDetails, details, video } = useContext(DataFetchContext)
-  const { user, signOutUser } = useContext(UserContext)
+  const { user, signOutUser, getUser } = useContext(UserContext)
 
   useEffect(() => {
+    // gotta fix this
     if (props.match.params.id) {
       fetchingVideoDetails(props.match.params.id)
     } else {
       console.log("useEffect shouldnt be there")
+    }
+
+    if (localStorage.getItem("user")) {
+
+      const user = localStorage.getItem("user")
+
+      getUser(JSON.parse(user))
+
+    } else {
+
+      console.log("nothing should happen")
+
     }
 
   }, [])
@@ -30,15 +44,12 @@ const Showpage = (props) => {
             </div>
             : "No video here"
         }
-        {/* {console.log(video.results[0].key, "<--------------------------------------eastside lunny")} */}
       </div>
-      <hr style={{ width: "50%", margin: "2rem auto" }} />
       <div className="detail-for-video">
         <div className="one">
           <img src={`https://image.tmdb.org/t/p/w500${details.poster_path}`} alt="popular" className="img" />
         </div>
         <div className="two">
-          {console.log(details, "<-----------here we go again?")}
           <h3>{details.original_title}</h3>
           <h4>{details.tagline}</h4>
           <br />
@@ -49,6 +60,15 @@ const Showpage = (props) => {
           <div className="check-reviews">
             <button>Check out reviews</button>
           </div>
+        </div>
+      </div>
+      <hr style={{ width: "50%", margin: "2rem auto" }} />
+      <div className="three">
+        <div className="inside">
+          {user
+            ? <Form />
+            : "nothing to see here"
+          }
         </div>
       </div>
     </div>
