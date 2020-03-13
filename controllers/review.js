@@ -1,7 +1,7 @@
 // movieid: String,
 // userid: [{type: Schema.Types.ObjectId, ref: 'User'}],
-// title: String,
-// body: String
+// comment: String,
+
 const express = require("express")
 const router = express.Router()
 

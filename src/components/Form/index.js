@@ -2,18 +2,23 @@ import React, { useState, useContext } from 'react'
 import './form.css'
 import { CommentContext } from '../contexts/CommentContext'
 
-export default function Form() {
+export default function Form(props) {
 
   const { postingComment } = useContext(CommentContext)
 
   const [input, setInput] = useState({
+    movieID: "",
+    userID: "", 
     comment: ""
   })
 
   const handleInput = (e) => {
+    const user = localStorage.getItem('user')
+    const userID = JSON.parse(user)
     setInput({
-      ...input,
-      [e.target.name]: e.target.value
+      movieID: props.match.params.id,
+      userID: userID._id,
+      comment: e.target.value
     })
   }
 
@@ -21,6 +26,8 @@ export default function Form() {
     e.preventDefault()
     postingComment(input)
     setInput({
+      movieID: "",
+      userID: "",
       comment: ""
     })
   }

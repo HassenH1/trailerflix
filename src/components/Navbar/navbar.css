@@ -5,7 +5,9 @@
 }
 
 .link-logo {
-  width: 20.6rem;
+  /* width: 20.6rem; */
+  width: 25.6rem;
+  height: 2.8rem;
 }
 
 li, a {

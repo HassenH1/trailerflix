@@ -65,7 +65,7 @@ const Showpage = (props) => {
       <div className="three">
         <div className="inside">
           {user
-            ? <Form />
+            ? <Form {...props}/>
             : ""
           }
           <div style={{ width: "100%", height: "auto" }}>
