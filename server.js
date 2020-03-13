@@ -17,8 +17,20 @@ require('./db/db.js')
 //   next();
 // });
 
-// app.use(cors())
-// app.options('*', cors())
+app.use(cors())
+// app.all('*', (req, res) => {
+//   res.header("Access-Control-Allow-Origin", "*");
+//   res.header("Access-Control-Allow-Headers", "Content-Type,Content-Length, Authorization, Accept,X-Requested-With");
+//   res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
+// })
+
+// app.all('*', function (req, res) {
+// res.header("Access-Control-Allow-Origin", "*");
+// res.header("Access-Control-Allow-Headers", "Content-Type,Content-Length, Authorization, Accept,X-Requested-With");
+// res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
+// )}
+
+app.options('*', cors())
 
 // const corsOptions = {
 //   origin: ['http://localhost'],

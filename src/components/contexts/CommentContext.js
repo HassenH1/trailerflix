@@ -14,15 +14,14 @@ export default function CommentContextProvider(props) {
     try {
       const c = await fetch("http://localhost:8000/review/post", {
         method: "POST",
-        credentials: "include",
-        body: JSON.stringify(a.comment),
+        // credentials: "include",
+        body: JSON.stringify(a),
         headers: {
-          "Content-Type": "application/json",
-          "Accept": "application/json"
+          "Content-Type": "application/json"
         }
       })
       const cJson = await c.json()
-
+      console.log(cJson, "<--------------------------------------what is this right here?")
     } catch (err) {
       console.log(err)
     }
