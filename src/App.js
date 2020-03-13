@@ -7,6 +7,7 @@ import Showpage from './components/Showpage';
 import Home from './components/Home';
 import DataFetchContextProvider from './components/contexts/DataFetchContext'
 import UserContextProvider from './components/contexts/UserContext';
+import CommentContextProvider from './components/contexts/CommentContext';
 
 function App() {
   return (
@@ -17,7 +18,9 @@ function App() {
           <Route exact path='/signin' component={Signin} />
           <Route exact path='/signup' component={Signup} />
           <Route exact path='/home' component={Home} />
+          <CommentContextProvider>
           <Route exact path='/movie/:id' render={(props) => <Showpage {...props}/>} />
+          </CommentContextProvider>
         </UserContextProvider>
       </DataFetchContextProvider>
     </Switch>

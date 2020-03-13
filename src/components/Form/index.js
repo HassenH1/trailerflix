@@ -1,7 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import './form.css'
+import { CommentContext } from '../contexts/CommentContext'
 
 export default function Form() {
+
+  const { postingComment } = useContext(CommentContext)
+
   const [input, setInput] = useState({
     comment: ""
   })
@@ -15,6 +19,7 @@ export default function Form() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    postingComment(input)
   }
 
   return (
@@ -22,7 +27,6 @@ export default function Form() {
       <textarea id="subject" name="subject" placeholder="What do you think of this Movie.." style={{ height: "100px", width: "42.7rem" }} onChange={handleInput} value={input.comment} name="comment"></textarea>
       <br />
       <input type="submit" value="Submit"></input>
-      {console.log(input, "<----------------------------------------------working comment here")}
     </form>
   )
 }
