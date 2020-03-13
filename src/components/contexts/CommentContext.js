@@ -22,7 +22,7 @@ export default function CommentContextProvider(props) {
 
   }
 
-  const fetchingComment = () => {
+  const fetchingComment = (movieID, userID) => {
     
   }
 
