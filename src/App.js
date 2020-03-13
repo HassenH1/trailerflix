@@ -19,7 +19,7 @@ function App() {
           <Route exact path='/signup' component={Signup} />
           <Route exact path='/home' component={Home} />
           <CommentContextProvider>
-          <Route exact path='/movie/:id' render={(props) => <Showpage {...props}/>} />
+            <Route exact path='/movie/:id' render={(props) => <Showpage {...props} />} />
           </CommentContextProvider>
         </UserContextProvider>
       </DataFetchContextProvider>

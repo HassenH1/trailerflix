@@ -5,6 +5,8 @@ import Navbar from '../Navbar'
 import './showpage.css'
 import Form from '../Form'
 import ReviewList from '../ReviewList'
+// import CommentContextProvider from './components/contexts/CommentContext';
+import CommentContextProvider from '../contexts/CommentContext';
 
 
 const Showpage = (props) => {
@@ -70,7 +72,9 @@ const Showpage = (props) => {
             : ""
           }
           <div style={{ width: "100%", height: "auto" }}>
-            <ReviewList />
+            <CommentContextProvider>
+              <ReviewList {...props} />
+            </CommentContextProvider>
           </div>
         </div>
       </div>

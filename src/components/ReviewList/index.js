@@ -1,19 +1,21 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useContext } from 'react'
+import { CommentContext } from '../contexts/CommentContext'
 
-export default function ReviewList() {
+export default function ReviewList(props) {
+
+  const { fetchingComment } = useContext(CommentContext)
 
   useEffect(() => {
+    let user = ""
+    let parsed = ""
     if (localStorage.getItem("user")) {
 
-      const user = localStorage.getItem("user")
+      user = localStorage.getItem("user")
 
-      console.log(JSON.parse(user), "<------------------------------from review list")
+      parsed = JSON.parse(user)
 
-    } else {
-
-      console.log("nothing should happen", "<--------------------------from review list")
-
-    }
+    } 
+    fetchingComment(props.match.params.id, parsed._id)
   }, [])
 
   return (

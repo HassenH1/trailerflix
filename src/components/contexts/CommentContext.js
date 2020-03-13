@@ -3,6 +3,7 @@ import React, { createContext, useState } from 'react'
 export const CommentContext = createContext()
 
 export default function CommentContextProvider(props) {
+  const [mID, setMID] = useState("")
 
   const postingComment = async (a) => {
 
@@ -29,7 +30,7 @@ export default function CommentContextProvider(props) {
   }
 
   return (
-    <CommentContext.Provider value={{ postingComment }}>
+    <CommentContext.Provider value={{ postingComment, fetchingComment }}>
       {props.children}
     </CommentContext.Provider>
   )

@@ -20,7 +20,7 @@ router.post("/post", async (req, res) => {
 
 router.get("/get", async (req,res) => {
   try {
-    
+    console.log(req.params, "<==================params")
     // const rFind = Review.findById()
   } catch(err) {
     console.log(err)
