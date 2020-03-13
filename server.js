@@ -4,6 +4,7 @@ const PORT = 8000
 const bodyParser = require('body-parser')
 var methodOverride = require('method-override')
 const user = require('./controllers/user.js')
+const reviewController = require('./controllers/review.js')
 const cors = require('cors')
 require('./db/db.js')
 
@@ -17,10 +18,8 @@ app.use(methodOverride('_method'))
 
 /**Controllers**/
 app.use('/', user)
+app.use('/review', reviewController)
 
-app.get('/', function (req, res) {
-  res.send('Hello World')
-})
 
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`)
