@@ -8,7 +8,7 @@ export default function Form(props) {
 
   const [input, setInput] = useState({
     movieID: "",
-    userID: "", 
+    userID: "",
     comment: ""
   })
 

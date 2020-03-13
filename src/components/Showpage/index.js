@@ -4,6 +4,7 @@ import { UserContext } from '../contexts/UserContext'
 import Navbar from '../Navbar'
 import './showpage.css'
 import Form from '../Form'
+import ReviewList from '../ReviewList'
 
 
 const Showpage = (props) => {
@@ -65,11 +66,11 @@ const Showpage = (props) => {
       <div className="three">
         <div className="inside">
           {user
-            ? <Form {...props}/>
+            ? <Form {...props} />
             : ""
           }
           <div style={{ width: "100%", height: "auto" }}>
-            Show a list of reviews here
+            <ReviewList />
           </div>
         </div>
       </div>
