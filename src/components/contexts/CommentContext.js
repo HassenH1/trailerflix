@@ -5,6 +5,7 @@ export const CommentContext = createContext()
 export default function CommentContextProvider(props) {
 
   const postingComment = async (a) => {
+
     try {
       const c = await fetch("http://localhost:8000/review/post", {
         method: "POST",
@@ -23,7 +24,8 @@ export default function CommentContextProvider(props) {
   }
 
   const fetchingComment = (movieID, userID) => {
-    
+    console.log(movieID, "<--------------------from comment context movie UD")
+    console.log(userID, "<---------------------from comment context user UD")
   }
 
   return (
