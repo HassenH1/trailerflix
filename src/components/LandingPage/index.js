@@ -8,12 +8,12 @@ const LandingPage = () => {
       <header className="showcase">
         <div className="showcase-top">
           <img src="https://i.ibb.co/r5krrdz/logo.png" alt="TrailerFlix" />
-          <Link exact to="/signin" className="btn btn-rounded">Sign In</Link>
+          <Link to="/signin" className="btn btn-rounded">Sign In</Link>
         </div>
         <div className="showcase-content">
           <h1>Check out Trailers</h1>
           <p>Watch Anytime, Anywhere</p>
-          <Link exact to="/home" className="btn btn-xl">Watch Now <i className="fas fa-chevron-right"></i></Link>
+          <Link to="/home" className="btn btn-xl">Watch Now <i className="fas fa-chevron-right"></i></Link>
         </div>
       </header>
 
@@ -34,7 +34,7 @@ const LandingPage = () => {
                 <p className="text-lg">
                   Watch all the movies and tv show trailer anytime.
                 </p>
-                <Link exact to="/home" className="btn btn-lg">
+                <Link to="/home" className="btn btn-lg">
                   Ready to Watch
                 </Link>
               </div>

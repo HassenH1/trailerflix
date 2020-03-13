@@ -22,7 +22,7 @@ const CarouselTopRated = (props) => {
     return (
       <div className="swiper-slide" key={i}>
         {/* {missing exact to= "show page here with id passing thru"} */}
-        <Link className="link" exact to={`/movie/${elem.id}`}><img src={`https://image.tmdb.org/t/p/w500${elem.backdrop_path}`} key={i} width="30" height="10" alt="top rated" /></Link>
+        <Link className="link" to={`/movie/${elem.id}`}><img src={`https://image.tmdb.org/t/p/w500${elem.backdrop_path}`} key={i} width="30" height="10" alt="top rated" /></Link>
       </div>
     )
   })

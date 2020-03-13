@@ -24,6 +24,7 @@ export default function Home() {
       console.log("nothing should happen")
 
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
