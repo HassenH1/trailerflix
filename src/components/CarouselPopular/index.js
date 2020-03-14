@@ -21,7 +21,6 @@ const CarouselPopular = (props) => {
   const images = props.popular && props.popular.results.map((elem, i) => {
     return (
       <div className="swiper-slide" key={i}>
-        {/* missing exact to = some show page here */}
         <Link className="link" to={`/movie/${elem.id}`}><img src={`https://image.tmdb.org/t/p/w500${elem.backdrop_path}`} width="30" height="10" alt="popular" /></Link>
       </div>
     )
