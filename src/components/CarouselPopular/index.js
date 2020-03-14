@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
-import './carousel.css'
 import Swiper from "swiper"
 import "swiper/css/swiper.css";
+import './carousel.css'
 import { withRouter, Link } from 'react-router-dom'
 
 const CarouselPopular = (props) => {
@@ -10,7 +10,7 @@ const CarouselPopular = (props) => {
     new Swiper('.swiper-container', {
       slidesPerView: 6,
       spaceBetween: 5,
-      slidesPerGroup: 2,
+      slidesPerGroup: 3,
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
