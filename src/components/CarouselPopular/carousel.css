@@ -14,7 +14,7 @@ body {
 .swiper-wrapper {
   transition-duration: 0ms;
   transform: translate3d(-3472px, 0px, 0px);
-  /* transform: translate3d(10px, 0px, 0px) !important; */
+  transform: translate3d(10px, 0px, 0px);
 }
 
 .swiper-container {
@@ -92,5 +92,5 @@ img {
   border: 1px solid orangered;
   width: 2.5rem;
   height: 4rem;
-  /* background: black; */
+  background: black;
 }
