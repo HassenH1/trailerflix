@@ -37,14 +37,18 @@ export default function CommentContextProvider(props) {
   }
 
   const removeComment = (cID) => {
+    //having stupid problems here */////////////////////////////////////////////////////////////////////
     console.log(mID, "<--------------------MID")
     console.log(cID, "<---------------------cID")
-    // mID.filter(elem => elem._id === cID)
-    const r = mID.filter((elem) => {
-      // console.log(elem._id === cID)
-      return elem._id === cID
+
+    const remove = mID.filter((elem) => {
+      console.log(elem._id, "<---------------------------------------elem id")
+      return elem._id !== cID
     })
-    // : {userID: Array(1), _id: "5e6b0bc4602bd0068012d970", movieID: "424", comment: "hello world", __v: 0}
+
+    // const items = this.state.updatedCart && this.state.updatedCart.filter((elem) => {
+    // return elem._id !== id
+    // })
   }
 
   return (
