@@ -1,7 +1,3 @@
-// movieid: String,
-// userid: [{type: Schema.Types.ObjectId, ref: 'User'}],
-// comment: String,
-
 const express = require("express")
 const router = express.Router()
 
@@ -9,7 +5,6 @@ const Review = require("../models/Review")
 const User = require("../models/User")
 
 router.post("/post", async (req, res) => {
-  console.log(req.body, "<--------------------whats in the body")
   try {
     const r = await Review.create(req.body)
     res.json(r)
@@ -20,8 +15,17 @@ router.post("/post", async (req, res) => {
 
 router.get("/get", async (req,res) => {
   try {
-    console.log(req.params, "<==================params")
-    // const rFind = Review.findById()
+    // const rFind = Review.find({})
+    // console.log(rFind, ",-----------------whats this?")
+    // res.json(rFind)
+
+    Review.find({}, function(err, review) {
+      if (err) {
+        res.status(404).send(err);
+      } else {
+        res.json(review);
+      }
+    })
   } catch(err) {
     console.log(err)
   }

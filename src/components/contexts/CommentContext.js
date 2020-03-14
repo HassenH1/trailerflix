@@ -24,13 +24,20 @@ export default function CommentContextProvider(props) {
 
   }
 
-  const fetchingComment = (movieID, userID) => {
-    console.log(movieID, "<--------------------from comment context movie UD")
-    console.log(userID, "<---------------------from comment context user UD")
+  const fetchingComment = async (movieID, userID) => {
+
+    const l = await fetch("http://localhost:8000/review/get", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+    const lJson = await l.json()
+    setMID(lJson)
   }
 
   return (
-    <CommentContext.Provider value={{ postingComment, fetchingComment }}>
+    <CommentContext.Provider value={{ postingComment, fetchingComment, mID }}>
       {props.children}
     </CommentContext.Provider>
   )
