@@ -21,12 +21,12 @@ export default function ReviewList(props) {
           </div>
         </div>
       )
+      return
     }
   })
 
   return (
     <>
-    {console.log(props.mID, ",-------mID")}
       {reviews}
     </>
   )

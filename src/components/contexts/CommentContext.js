@@ -10,14 +10,12 @@ export default function CommentContextProvider(props) {
     try {
       const c = await fetch("http://localhost:8000/review/post", {
         method: "POST",
-        // credentials: "include",
         body: JSON.stringify(a),
         headers: {
           "Content-Type": "application/json"
         }
       })
       const cJson = await c.json()
-      console.log(cJson, "<--------------------------------------what is this right here?")
     } catch (err) {
       console.log(err)
     }
@@ -45,7 +43,6 @@ export default function CommentContextProvider(props) {
       console.log(elem._id, "<---------------------------------------elem id")
       return elem._id !== cID
     })
-
     // const items = this.state.updatedCart && this.state.updatedCart.filter((elem) => {
     // return elem._id !== id
     // })

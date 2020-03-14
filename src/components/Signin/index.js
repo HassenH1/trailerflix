@@ -53,7 +53,7 @@ const Signin = (props) => {
           <div style={{ textAlign: "center", color: "red" }}>{error}</div>
           <div style={{ textAlign: "center", color: "red" }}>{wrongValidation}</div>
           <div className="new-new">
-            <p className="p-sm">New to TrailerFlix? <Link exact to="/signup">Sign up now!</Link></p>
+            <p className="p-sm">New to TrailerFlix? <Link to="/signup">Sign up now!</Link></p>
           </div>
         </div>
       </header>

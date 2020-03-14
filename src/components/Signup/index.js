@@ -50,7 +50,7 @@ const Signup = (props) => {
           </form>
           <div style={{ textAlign: "center", color: "red" }}>{error}</div>
           <div className="new-new">
-            <p className="p-sm">Already have an Account? <Link href="/signin">Sign in.</Link></p>
+            <p className="p-sm">Already have an Account? <Link to="/signin">Sign in.</Link></p>
           </div>
         </div>
       </header>

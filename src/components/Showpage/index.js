@@ -37,6 +37,7 @@ const Showpage = (props) => {
 
     }
     fetchingComment()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
@@ -75,7 +76,7 @@ const Showpage = (props) => {
           }
           <div style={{ width: "100%", height: "auto" }}>
             <CommentContextProvider>
-              <ReviewList {...props} mID={mID} removeComment={removeComment}/>
+              <ReviewList {...props} mID={mID} removeComment={removeComment} />
             </CommentContextProvider>
           </div>
         </div>
