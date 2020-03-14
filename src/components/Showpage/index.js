@@ -5,10 +5,8 @@ import Navbar from '../Navbar'
 import './showpage.css'
 import Form from '../Form'
 import ReviewList from '../ReviewList'
-// import CommentContextProvider from './components/contexts/CommentContext';
 import CommentContextProvider from '../contexts/CommentContext';
 import { CommentContext } from '../contexts/CommentContext'
-
 
 const Showpage = (props) => {
   const { fetchingVideoDetails, details, video } = useContext(DataFetchContext)
@@ -77,7 +75,7 @@ const Showpage = (props) => {
           }
           <div style={{ width: "100%", height: "auto" }}>
             <CommentContextProvider>
-              <ReviewList {...props} mID={mID}/>
+              <ReviewList {...props} mID={mID} />
             </CommentContextProvider>
           </div>
         </div>

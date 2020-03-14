@@ -1,28 +1,20 @@
 import React, { useEffect, useContext } from 'react'
-// import { CommentContext } from '../contexts/CommentContext'
 
 export default function ReviewList(props) {
 
-  // const { fetchingComment, mID } = useContext(CommentContext)
-
-  useEffect(() => {
-    // let user = ""
-    // let parsed = ""
-    // if (localStorage.getItem("user")) {
-
-    //   user = localStorage.getItem("user")
-
-    //   parsed = JSON.parse(user)
-
-    // }
-    // fetchingComment()
-  }, [])
+  const uID = localStorage.getItem("user")
+  const parsedUserID = JSON.parse(uID)
 
   const reviews = props.mID && props.mID.map((elem, i) => {
-    if(elem.movieID === props.match.params.id) {
-      return(
-        <div key={i}>
+    if (elem.movieID === props.match.params.id) {
+      return (
+        <div key={i} style={{ border: "1px solid yellow", height: "auto", width: "100%", margin: "1rem 0", padding: "3rem 0" }}>
           {elem.comment}
+          {
+            elem.userID === parsedUserID._id
+              ? "Why is this not showing?"
+              : console.log("not showing up anywhere")
+          }
         </div>
       )
     }
@@ -34,5 +26,3 @@ export default function ReviewList(props) {
     </div>
   )
 }
-
-// {userID: Array(1), _id: "5e6b0bc4602bd0068012d970", movieID: "424", comment: "hello world", __v: 0}
