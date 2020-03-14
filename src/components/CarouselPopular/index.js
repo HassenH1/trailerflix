@@ -7,7 +7,7 @@ import { withRouter, Link } from 'react-router-dom'
 const CarouselPopular = (props) => {
 
   useEffect(() => {
-    let swiper = new Swiper('.swiper-container', {
+    new Swiper('.swiper-container', {
       slidesPerView: 6,
       spaceBetween: 5,
       slidesPerGroup: 2,

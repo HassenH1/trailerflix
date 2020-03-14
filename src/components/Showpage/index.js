@@ -21,9 +21,7 @@ const Showpage = (props) => {
 
     if (props.match.params.id) {
       fetchingVideoDetails(props.match.params.id)
-    } else {
-      console.log("useEffect shouldnt be there")
-    }
+    } 
 
     if (localStorage.getItem("user")) {
 

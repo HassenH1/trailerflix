@@ -15,7 +15,7 @@ export default function CommentContextProvider(props) {
           "Content-Type": "application/json"
         }
       })
-      const cJson = await c.json()
+      await c.json()
     } catch (err) {
       console.log(err)
     }
@@ -39,7 +39,7 @@ export default function CommentContextProvider(props) {
     console.log(mID, "<--------------------MID")
     console.log(cID, "<---------------------cID")
 
-    const remove = mID.filter((elem) => {
+    mID.filter((elem) => {
       console.log(elem._id, "<---------------------------------------elem id")
       return elem._id !== cID
     })
