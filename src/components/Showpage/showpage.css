@@ -52,7 +52,7 @@
 
 .three {
   /* border: 1px solid orange; */
-  height: 400px;
+  height: auto;
   width: 60%;
   margin: auto;
   font-size: 20px;

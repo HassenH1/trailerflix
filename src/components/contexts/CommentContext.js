@@ -36,8 +36,19 @@ export default function CommentContextProvider(props) {
     setMID(lJson)
   }
 
+  const removeComment = (cID) => {
+    console.log(mID, "<--------------------MID")
+    console.log(cID, "<---------------------cID")
+    // mID.filter(elem => elem._id === cID)
+    const r = mID.filter((elem) => {
+      // console.log(elem._id === cID)
+      return elem._id === cID
+    })
+    // : {userID: Array(1), _id: "5e6b0bc4602bd0068012d970", movieID: "424", comment: "hello world", __v: 0}
+  }
+
   return (
-    <CommentContext.Provider value={{ postingComment, fetchingComment, mID }}>
+    <CommentContext.Provider value={{ postingComment, fetchingComment, removeComment, mID }}>
       {props.children}
     </CommentContext.Provider>
   )

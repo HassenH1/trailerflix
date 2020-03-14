@@ -13,7 +13,7 @@ const Showpage = (props) => {
 
   const { user, signOutUser, getUser } = useContext(UserContext)
 
-  const { fetchingComment, mID } = useContext(CommentContext)
+  const { fetchingComment, removeComment, mID } = useContext(CommentContext)
 
   useEffect(() => {
     // gotta fix this
@@ -75,7 +75,7 @@ const Showpage = (props) => {
           }
           <div style={{ width: "100%", height: "auto" }}>
             <CommentContextProvider>
-              <ReviewList {...props} mID={mID} />
+              <ReviewList {...props} mID={mID} removeComment={removeComment}/>
             </CommentContextProvider>
           </div>
         </div>
