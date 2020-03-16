@@ -21,15 +21,14 @@ const CarouselTopRated = (props) => {
   const images = props.topRated && props.topRated.results.map((elem, i) => {
     return (
       <div className="swiper-slide" key={i}>
-        {/* {missing exact to= "show page here with id passing thru"} */}
-        <Link className="link" to={`/movie/${elem.id}`}><img src={`https://image.tmdb.org/t/p/w500${elem.backdrop_path}`} key={i} width="30" height="10" alt="top rated" /></Link>
+        <Link to={`/movie/${elem.id}`}><img src={`https://image.tmdb.org/t/p/w500${elem.backdrop_path}`} key={i} width="10" height="300" alt="top rated" /></Link>
       </div>
     )
   })
 
   return (
     <>
-      <div className="netflix">
+      <div style={{ height: "20rem" }}>
         <h2 className="popular-heading2">Top Rated</h2>
         <div className="swiper-container">
           <div className="swiper-wrapper">

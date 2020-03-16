@@ -5,6 +5,8 @@ import { UserContext } from '../contexts/UserContext'
 import CarouselPopular from '../CarouselPopular'
 import CarouselTopRated from '../CarouselTopRated'
 import BigCarouselNowPlaying from '../BigCarouselNowPlaying'
+import One from '../One'
+import Two from '../Two'
 
 export default function Home() {
   const { nowPlaying, popular, topRated } = useContext(DataFetchContext)
@@ -31,8 +33,10 @@ export default function Home() {
     <>
       <Navbar user={user} signOutUser={signOutUser} />
       <BigCarouselNowPlaying nowPlaying={nowPlaying} />
-      <CarouselPopular popular={popular} />
-      <CarouselTopRated topRated={topRated} />
+      <One popular={popular} />
+      <Two topRated={topRated}/>
+      {/* <CarouselPopular popular={popular} /> */}
+      {/* <CarouselTopRated topRated={topRated} /> */}
     </>
   )
 }

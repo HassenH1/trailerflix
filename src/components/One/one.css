@@ -1,0 +1,38 @@
+.netflix-img {
+  max-width: 100%;
+  height: auto;
+}
+
+.big-text {
+  margin-top: 0;
+  margin-bottom: 4px;
+}
+
+.swiper-button-next {
+  color: white;
+}
+
+.swiper-button-prev {
+  color: white;
+}
+
+.swiper-slide {
+  transition: 25ms all;
+}
+
+.swiper-slide:hover {
+  transform: scale(1.2);
+  z-index: 1;
+}
+
+.swiper-wrapper {
+  padding: 20px 0;
+}
+
+.swiper-slide:first-child:hover {
+  margin: 0 30px;
+}
+
+.swiper-slide:last-child:hover {
+  margin: 0 -30px;
+}

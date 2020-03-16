@@ -25,7 +25,7 @@ function BigCarouselNowPlaying(props) {
           <Link to={`/movie/${elem.id}`}><img src={`https://image.tmdb.org/t/p/original${elem.poster_path}`} alt="now playing" /></Link>
         </div>
 
-        <div className="big-text">
+        <div className="big-text1">
           <h2>{elem.original_title}</h2>
 
           <br />
