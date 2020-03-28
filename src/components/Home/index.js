@@ -7,6 +7,7 @@ import CarouselTopRated from '../CarouselTopRated'
 import BigCarouselNowPlaying from '../BigCarouselNowPlaying'
 import One from '../One'
 import Two from '../Two'
+import Footer from '../Footer'
 
 export default function Home() {
   const { nowPlaying, popular, topRated } = useContext(DataFetchContext)
@@ -37,6 +38,7 @@ export default function Home() {
       <Two topRated={topRated}/>
       {/* <CarouselPopular popular={popular} /> */}
       {/* <CarouselTopRated topRated={topRated} /> */}
+      <Footer />
     </>
   )
 }

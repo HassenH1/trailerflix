@@ -3,7 +3,6 @@ html, body {
   height: 100%;
 }
 body {
-  /* background: #eee; */
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 14px;
   color:#000;
@@ -14,12 +13,18 @@ body {
   width: 100%;
   height: 90%;
 }
+
+.swiper-wrapper {
+  transition-duration: 300ms !important;
+  transform: translate3d(-220px, 0px, 0px);
+  height: 134px;
+}
+
 .swiper-slide {
   text-align: center;
   font-size: 18px;
   background: #fff;
 
-  /* Center slide text vertically */
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -32,4 +37,10 @@ body {
   -ms-flex-align: center;
   -webkit-align-items: center;
   align-items: center;
+}
+
+.swiper-slide {
+  transition: 25ms all;
+  width: 244.667px;
+  margin-right: 3px;
 }

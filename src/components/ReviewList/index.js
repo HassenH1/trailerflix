@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 export default function ReviewList(props) {
 
@@ -17,7 +17,7 @@ export default function ReviewList(props) {
               </div>
               : ""
           }
-          <div style={{ margin: "0 auto" }}>
+          <div style={{ margin: "0 auto", color: "white" }}>
             {elem.comment}
           </div>
         </div>
