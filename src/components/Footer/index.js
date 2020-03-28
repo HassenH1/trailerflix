@@ -14,18 +14,18 @@ function Footer() {
     }}>
 
       <div style={{ paddingTop: '1rem' }}>
-        <h3 style={{marginTop: "1rem", fontSize: "15px", textAlign: "center"}}>
-        <i className="fas fa-database"></i> TMDB API</h3>
+        <h3 style={{ marginTop: "1rem", fontSize: "15px", textAlign: "center" }}>
+          <i className="fas fa-database"></i> TMDB API</h3>
         <h4>(The Movie Database)</h4>
       </div>
 
       <div style={{ paddingTop: '1rem' }}>
-        <h3 style={{marginTop: "1rem", fontSize: "15px"}}><i className="fas fa-heart"></i> Made with Love.</h3>
+        <h3 style={{ marginTop: "1rem", fontSize: "15px" }}><i className="fas fa-heart"></i> Made with Love.</h3>
       </div>
 
       <div style={{ paddingTop: '1rem' }}>
-      
-        <h3 style={{marginTop: "1rem", fontSize: "15px"}}><i className="far fa-file-code" style={{fontSize: "1.5rem"}}></i> By Hassen Hassen</h3>
+
+        <h3 style={{ marginTop: "1rem", fontSize: "15px" }}><i className="far fa-file-code" style={{ fontSize: "1.5rem" }}></i> By Hassen Hassen</h3>
       </div>
 
     </div>

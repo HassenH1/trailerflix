@@ -7,6 +7,7 @@ import Form from '../Form'
 import ReviewList from '../ReviewList'
 import CommentContextProvider from '../contexts/CommentContext';
 import { CommentContext } from '../contexts/CommentContext'
+import Footer from '../Footer'
 
 const Showpage = (props) => {
   const { fetchingVideoDetails, details, video } = useContext(DataFetchContext)
@@ -79,6 +80,7 @@ const Showpage = (props) => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   )
 }
