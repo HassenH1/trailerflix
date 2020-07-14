@@ -7,7 +7,6 @@ const user = require("./controllers/user.js");
 const reviewController = require("./controllers/review.js");
 const cors = require("cors");
 require("./db/db.js");
-
 /***middleware***/
 
 app.use(cors());
