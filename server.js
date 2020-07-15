@@ -18,6 +18,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use(methodOverride("_method"));
+app.use(express.static(path.join(__dirname, "build")));
 
 /**Controllers**/
 app.use("/", user);
