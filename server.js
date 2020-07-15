@@ -22,6 +22,11 @@ app.use(methodOverride("_method"));
 app.use("/", user);
 app.use("/review", reviewController);
 
+//need this line to render client side
+app.get("/*", (req, res) => {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
+});
+
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);
 });
