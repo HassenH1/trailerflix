@@ -1,48 +1,56 @@
-import React from 'react'
-import AwesomeSlider from 'react-awesome-slider';
-import withAutoplay from 'react-awesome-slider/dist/autoplay';
-import 'react-awesome-slider/dist/styles.css';
-import './bigcarousel.css'
-import { withRouter, Link } from 'react-router-dom'
+import React from "react";
+import AwesomeSlider from "react-awesome-slider";
+import withAutoplay from "react-awesome-slider/dist/autoplay";
+import "react-awesome-slider/dist/styles.css";
+import "./bigcarousel.css";
+import { withRouter, Link } from "react-router-dom";
 
 function BigCarouselNowPlaying(props) {
-
   const shortingString = (str) => {
-    let newS = ""
+    let newS = "";
 
-    newS = str.split(" ")
+    newS = str.split(" ");
 
-    newS.splice(60, newS.length, "...")
+    newS.splice(60, newS.length, "...");
 
-    return newS.join(" ")
-  }
+    return newS.join(" ");
+  };
 
-  const images = props.nowPlaying && props.nowPlaying.results.map((elem, i) => {
-    return (
-      <div key={i} className="IS-THIS-IT">
+  const images =
+    props.nowPlaying &&
+    props.nowPlaying.results.map((elem, i) => {
+      return (
+        <div key={i} className="IS-THIS-IT">
+          <div className="image-container">
+            <Link to={`/movie/${elem.id}`}>
+              <img
+                src={`https://image.tmdb.org/t/p/original${elem.poster_path}`}
+                alt="now playing"
+              />
+            </Link>
+          </div>
 
-        <div className="image-container">
-          <Link to={`/movie/${elem.id}`}><img src={`https://image.tmdb.org/t/p/original${elem.poster_path}`} alt="now playing" /></Link>
+          <div className="big-text1">
+            <h2 id="h2-heading">{elem.original_title}</h2>
+
+            <br />
+            {elem.overview.split(" ").length >= 60 ? (
+              <p>{shortingString(elem.overview)}</p>
+            ) : (
+              <div>
+                <p id="p-text">{elem.overview}</p>
+              </div>
+            )}
+
+            <br />
+
+            <button className="btn">
+              <Link to="#">Watch Trailer</Link>
+            </button>
+          </div>
         </div>
-
-        <div className="big-text1">
-          <h2>{elem.original_title}</h2>
-
-          <br />
-          {
-            elem.overview.split(" ").length >= 60
-              ? <p>{shortingString(elem.overview)}</p>
-              : <p>{elem.overview}</p>
-          }
-
-          <br />
-
-          <button className="btn"><Link to="#">Watch Trailer</Link></button>
-        </div>
-
-      </div>
-    )
-  })
+      );
+    });
 
   const AutoplaySlider = withAutoplay(AwesomeSlider);
 
@@ -54,11 +62,11 @@ function BigCarouselNowPlaying(props) {
         interval={8000}
         infinite={true}
         bullets={false}
-      // fillParent={true}
+        // fillParent={true}
       >
         {images}
       </AutoplaySlider>
     </>
-  )
+  );
 }
-export default withRouter(BigCarouselNowPlaying)
+export default withRouter(BigCarouselNowPlaying);

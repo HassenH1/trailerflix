@@ -36,3 +36,43 @@
   margin: 0;
   padding: 0;
 }
+
+@media only screen and (max-device-width: 480px) {
+  .awssld__wrapper {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    height: 2%;
+    width: 100%;
+  }
+  .awssld__content {
+    height: 16.4rem;
+  }
+  .IS-THIS-IT {
+    display: flex;
+    flex-direction: unset;
+    justify-content: space-evenly;
+    margin: 0;
+    background: black;
+    align-content: center;
+    align-items: center;
+    padding: 52px 0;
+  }
+  #h2-heading {
+    font-size: 12px;
+  }
+  .big-text1 {
+    font-size: 23px;
+    width: 35%;
+    padding-top: 1rem;
+    color: white;
+    margin: 0;
+  }
+  #p-text {
+    font-size: 10px;
+    margin-bottom: 3rem;
+    position: absolute;
+    bottom: 387px;
+    color: transparent;
+  }
+}
