@@ -1,6 +1,6 @@
-import React from 'react'
-import './landingpage.css'
-import { Link, withRouter } from 'react-router-dom'
+import React from "react";
+import "./landingpage.css";
+import { Link, withRouter } from "react-router-dom";
 
 const LandingPage = () => {
   return (
@@ -8,12 +8,16 @@ const LandingPage = () => {
       <header className="showcase">
         <div className="showcase-top">
           <img src="https://i.ibb.co/r5krrdz/logo.png" alt="TrailerFlix" />
-          <Link to="/signin" className="btn btn-rounded">Sign In</Link>
+          <Link to="/signin" className="btn btn-rounded">
+            Sign In
+          </Link>
         </div>
         <div className="showcase-content">
           <h1>Check out Trailers</h1>
           <p>Watch Anytime, Anywhere</p>
-          <Link to="/home" className="btn btn-xl">Watch Now <i className="fas fa-chevron-right"></i></Link>
+          <Link to="/home" className="btn btn-xl">
+            Watch Now <i className="fas fa-chevron-right"></i>
+          </Link>
         </div>
       </header>
 
@@ -38,13 +42,19 @@ const LandingPage = () => {
                   Ready to Watch
                 </Link>
               </div>
-              <img src="https://is5-ssl.mzstatic.com/image/thumb/Purple124/v4/31/90/18/319018cc-65f5-9e6a-18f1-a93e1ab6b897/source/256x256bb.jpg" alt="trailer" height="350" width="50" />
+              <img
+                id="img-hidden"
+                src="https://is5-ssl.mzstatic.com/image/thumb/Purple124/v4/31/90/18/319018cc-65f5-9e6a-18f1-a93e1ab6b897/source/256x256bb.jpg"
+                alt="trailer"
+                height="350"
+                width="50"
+              />
             </div>
           </div>
         </div>
       </section>
     </div>
-  )
-}
+  );
+};
 
-export default withRouter(LandingPage)
+export default withRouter(LandingPage);

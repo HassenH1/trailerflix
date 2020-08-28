@@ -36,3 +36,21 @@
 .swiper-slide:last-child:hover {
   margin: 0 -30px;
 }
+
+@media only screen and (max-device-width: 480px) {
+  #netflix-one-mobile {
+    margin-top: 5rem;
+  }
+  .swiper-wrapper {
+    transform: translate3d(0px, 0px, 0px);
+    height: 7vh;
+  }
+  .swiper-slide {
+    width: 186px !important;
+    margin-right: 7px !important;
+  }
+  .netflix-img {
+    max-width: 100%;
+    height: 10vh;
+  }
+}
