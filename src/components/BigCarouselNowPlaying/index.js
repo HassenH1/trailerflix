@@ -44,7 +44,7 @@ function BigCarouselNowPlaying(props) {
 
             <br />
 
-            <button className="btn">
+            <button className="btn btn-watch">
               <Link to="#">Watch Trailer</Link>
             </button>
           </div>

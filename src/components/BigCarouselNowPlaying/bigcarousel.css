@@ -59,7 +59,7 @@
     padding: 52px 0;
   }
   #h2-heading {
-    font-size: 12px;
+    font-size: 25px;
   }
   .big-text1 {
     font-size: 23px;
@@ -74,5 +74,8 @@
     position: absolute;
     bottom: 387px;
     color: transparent;
+  }
+  .btn-watch {
+    padding: 0.5rem 0.9rem;
   }
 }
