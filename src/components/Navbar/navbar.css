@@ -107,8 +107,13 @@ button:hover {
     padding: 30px 2%;
   }
   .logo-img {
-    width: 70%;
-    height: 100%;
+    width: 60%;
+    height: 80%;
     cursor: pointer;
+  }
+  .link-logo {
+    /* width: 20.6rem; */
+    width: 30.6rem;
+    height: 2.8rem;
   }
 }
