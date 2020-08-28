@@ -31,7 +31,7 @@
   height: 200px;
   width: 45%;
 } */
-  /* margin: auto; */
+/* margin: auto; */
 
 .two {
   /* border: 1px solid orange; */
@@ -64,4 +64,30 @@
 .inside {
   margin-top: 1rem;
   /* border: 1px solid purple; */
+}
+
+@media only screen and (max-device-width: 480px) {
+  .video-container {
+    border-top: 1px solid red;
+    border-bottom: 1px solid red;
+    display: flex;
+    justify-content: center;
+    margin: 1rem auto;
+  }
+  .video-size {
+    /* max-width: 100%; */
+    width: 350px;
+    /* height: 750px; */
+    height: 350px;
+  }
+  .detail-for-video {
+    /* border: 2px solid yellow; */
+    height: auto;
+    width: 80%;
+    margin: 1rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+  }
 }
