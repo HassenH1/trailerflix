@@ -18,7 +18,7 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0",
     "react-slick": "^0.25.2",
-    "swiper": "^5.3.6"
+    "swiper": "^6.5.1"
   },
   "scripts": {
     "start": "react-scripts start",
